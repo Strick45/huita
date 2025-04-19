@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BPMN Editor</title>
+  <link rel="stylesheet" href="https://unpkg.com/bpmn-js/dist/assets/diagram-js.css">
+  <link rel="stylesheet" href="https://unpkg.com/bpmn-js/dist/assets/bpmn-font/css/bpmn.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Devcore</h1>
+    <div class="toolbar">
+      <button id="saveButton">Сохранить (Ctrl+S)</button>
+      <button id="loadButton">Загрузить</button>
+    </div>
+  </div>
+
+  <div id="canvas"></div>
+
+  <script src="https://unpkg.com/bpmn-js/dist/bpmn-modeler.development.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

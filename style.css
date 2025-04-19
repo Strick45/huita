@@ -1,0 +1,175 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ff7f50, #ffa07a); /* Оранжевый градиент */
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  padding: 12px 16px;
+  background-color: #000; /* Черный фон */
+  color: white;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  padding: 8px;
+  background-color: #121212; /* Темно-черный фон */
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.toolbar button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: #212121; /* Еще темнее для кнопок */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.toolbar button:hover {
+  background-color: #333; /* Светлее при наведении */
+}
+
+.toolbar button svg {
+  stroke: white;
+}
+
+.separator {
+  width: 1px;
+  background-color: #333; /* Разделитель в тон */
+  margin: 0 4px;
+}
+
+/* Content Area */
+.content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Canvas */
+/* Canvas */
+#canvas {
+  position: relative; /* Необходимо для позиционирования */
+  flex: 1;
+  border: 1px solid #000; /* Черная граница */
+  border-radius: 4px;
+  overflow: hidden; /* Чтобы сетка не выходила за границы */
+
+  /* Фон с текстурой перед градиентом */
+  background: 
+    linear-gradient(135deg, #000, #ff7f50), /* Статичный градиент */
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 5px,
+      transparent 5px,
+      transparent 10px
+    ), /* Текстура в виде диагональных линий */
+    repeating-linear-gradient(to right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 10px), /* Вертикальные штрихи */
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 10px); /* Горизонтальные штрихи */
+}
+
+/* Сетка поверх фона */
+/* Canvas */
+#canvas {
+  position: relative;
+  flex: 1;
+  border: 1px solid #000;
+  border-radius: 4px;
+  overflow: hidden;
+
+  /* Фон с текстурой перед градиентом */
+  background: 
+    linear-gradient(135deg, #000, #ff7f50),
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 5px,
+      transparent 5px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(to right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 10px),
+    repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 1px, transparent 1px, transparent 10px);
+}
+
+/* Точечная сетка поверх фона */
+#canvas::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+    circle at 1px 1px, 
+    rgba(255, 255, 255, 0.3) 1px, 
+    transparent 1px
+  );
+  background-size: 20px 20px; /* Расстояние между точками */
+  background-position: 10px 10px; /* Смещение для центрирования */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Properties Panel */
+#properties-panel {
+  width: 300px;
+  border-left: 1px solid #ddd;
+  overflow-y: auto;
+  background-color: #fafafa;
+}
+
+/* Status Bar */
+.status-bar {
+  padding: 4px 8px;
+  background-color: #263238;
+  color: #b0bec5;
+  font-size: 12px;
+}
+
+/* Error Message */
+.error-message {
+  padding: 20px;
+  color: #d32f2f;
+  background-color: #ffebee;
+  border-radius: 4px;
+  margin: 20px;
+}
+
+.error-message h3 {
+  margin-bottom: 10px;
+}
